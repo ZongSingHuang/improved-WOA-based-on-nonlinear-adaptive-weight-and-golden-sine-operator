@@ -357,7 +357,7 @@ for i in range(times):
     x_max = 10*np.ones(d)
     x_min = -10*np.ones(d)
     optimizer = NGS_WOA(fit_func=Schwefel_P222, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -371,7 +371,7 @@ for i in range(times):
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
     optimizer = NGS_WOA(fit_func=Quadric, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -384,7 +384,7 @@ for i in range(times):
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
     optimizer = NGS_WOA(fit_func=Schwefel_P221, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -397,7 +397,7 @@ for i in range(times):
     x_max = 30*np.ones(d)
     x_min = -30*np.ones(d)
     optimizer = NGS_WOA(fit_func=Rosenbrock, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -411,7 +411,7 @@ for i in range(times):
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
     optimizer = NGS_WOA(fit_func=Step, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -425,7 +425,7 @@ for i in range(times):
     x_max = 1.28*np.ones(d)
     x_min = -1.28*np.ones(d)
     optimizer = NGS_WOA(fit_func=Quadric_Noise, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -439,7 +439,7 @@ for i in range(times):
     x_max = 500*np.ones(d)
     x_min = -500*np.ones(d)
     optimizer = NGS_WOA(fit_func=Schwefel, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -453,7 +453,7 @@ for i in range(times):
     x_max = 5.12*np.ones(d)
     x_min = -5.12*np.ones(d)
     optimizer = NGS_WOA(fit_func=Rastrigin, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -466,7 +466,7 @@ for i in range(times):
     x_max = 32*np.ones(d)
     x_min = -32*np.ones(d)
     optimizer = NGS_WOA(fit_func=Ackley, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -480,7 +480,7 @@ for i in range(times):
     x_max = 600*np.ones(d)
     x_min = -600*np.ones(d)
     optimizer = NGS_WOA(fit_func=Griewank, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -493,7 +493,7 @@ for i in range(times):
     x_max = 50*np.ones(d)
     x_min = -50*np.ones(d)
     optimizer = NGS_WOA(fit_func=Generalized_Penalized01, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -506,7 +506,7 @@ for i in range(times):
     x_max = 50*np.ones(d)
     x_min = -50*np.ones(d)
     optimizer = NGS_WOA(fit_func=Generalized_Penalized02, 
-                             num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=d, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -519,7 +519,7 @@ for i in range(times):
     x_max = 65.536*np.ones(2)
     x_min = -65.536*np.ones(2)
     optimizer = NGS_WOA(fit_func=DE_JONG_N5, 
-                             num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -532,7 +532,7 @@ for i in range(times):
     x_max = 5*np.ones(4)
     x_min = -5*np.ones(4)
     optimizer = NGS_WOA(fit_func=Kowalik, 
-                             num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -545,7 +545,7 @@ for i in range(times):
     x_max = 5*np.ones(2)
     x_min = -5*np.ones(2)
     optimizer = NGS_WOA(fit_func=Six_Hump_Camel, 
-                             num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -558,7 +558,7 @@ for i in range(times):
     x_max = 5*np.ones(2)
     x_min = -5*np.ones(2)
     optimizer = NGS_WOA(fit_func=Brain, 
-                             num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -571,7 +571,7 @@ for i in range(times):
     x_max = 2*np.ones(2)
     x_min = -2*np.ones(2)
     optimizer = NGS_WOA(fit_func=Goldstein_Price, 
-                             num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=2, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -584,7 +584,7 @@ for i in range(times):
     x_max = 1*np.ones(3)
     x_min = 0*np.ones(3)
     optimizer = NGS_WOA(fit_func=Hartmann_3D, 
-                             num_dim=3, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=3, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -597,7 +597,7 @@ for i in range(times):
     x_max = 1*np.ones(6)
     x_min = 0*np.ones(6)
     optimizer = NGS_WOA(fit_func=Hartmann_6D, 
-                             num_dim=6, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=6, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -610,7 +610,7 @@ for i in range(times):
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
     optimizer = NGS_WOA(fit_func=Shekel_m5, 
-                             num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -623,7 +623,7 @@ for i in range(times):
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
     optimizer = NGS_WOA(fit_func=Shekel_m7, 
-                             num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()
@@ -636,7 +636,7 @@ for i in range(times):
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
     optimizer = NGS_WOA(fit_func=Shekel_m10, 
-                             num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
+                              num_dim=4, num_particle=p, max_iter=g, x_max=x_max, x_min=x_min)
     start = time.time()
     optimizer.opt()
     end = time.time()

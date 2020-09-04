@@ -46,8 +46,6 @@ class NGS_WOA():
         m2 = -2*np.pi + tao*2*np.pi
         b = 1
         while(self._iter<self.max_iter):
-            R1 = 2*np.pi*np.random.uniform()
-            R2 = np.pi*np.random.uniform()
             a = self.a_max - (self.a_max-self.a_min)*(self._iter/self.max_iter)
             if self._iter<0.5*self.max_iter:
                 C1 = 0.5*(1 + np.cos(np.pi*self._iter/self.max_iter))**0.5
@@ -55,6 +53,8 @@ class NGS_WOA():
                 C1 = 0.5*(1 - np.cos(np.pi+(np.pi*self._iter/self.max_iter)))**0.5
                 
             for i in range(self.num_particle):
+                R1 = 2*np.pi*np.random.uniform()
+                R2 = np.pi*np.random.uniform()
                 p = np.random.uniform()
                 r1 = np.random.uniform()
                 r2 = np.random.uniform()
@@ -75,7 +75,7 @@ class NGS_WOA():
             self.X = self.X*np.abs(np.sin(R1)) + R2*np.sin(R1)*np.abs(m1*self.gBest_X-m2*self.X)
   
             self.X[self.bound_max < self.X] = self.bound_max[self.bound_max < self.X]
-            self.X[self.bound_min > self.X] = self.bound_min[self.bound_min > self.X]
+            self.X[self.bound_min > self.X] = self.bound_min[self.bound_min > self.X]                        
                    
             score = self.fit_func(self.X)
             if np.min(score) < self.gBest_score:

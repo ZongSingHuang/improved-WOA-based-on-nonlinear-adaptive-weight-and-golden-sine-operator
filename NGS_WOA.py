@@ -4,7 +4,8 @@ Created on Sat Sep  5 02:03:07 2020
 
 @author: ZongSing_NB
 
-Main reference:https://ieeexplore.ieee.org/document/9076166
+Main reference:
+https://doi.org/10.1109/ACCESS.2020.2989445
 """
 
 import numpy as np
@@ -26,14 +27,12 @@ class NGS_WOA():
         self.l_max = l_max
         self.l_min = l_min
         self.b = b
-        self.bound_max = np.dot(np.ones(self.num_particle)[:, np.newaxis], self.x_max[np.newaxis, :])
-        self.bound_min = np.dot(np.ones(self.num_particle)[:, np.newaxis], self.x_min[np.newaxis, :])
         
         self._iter = 1
         self.gBest_X = None
         self.gBest_score = np.inf
         self.gBest_curve = np.zeros(self.max_iter)
-        self.X = np.random.uniform(size=[self.num_particle, self.num_dim])*(self.x_max-self.x_min) + self.x_min
+        self.X = np.random.uniform(low=self.x_min, high=self.x_max, size=[self.num_particle, self.num_dim])
        
         score = self.fit_func(self.X)
         self.gBest_score = score.min().copy()
@@ -44,38 +43,38 @@ class NGS_WOA():
         tao = (np.sqrt(5)-1)/2
         m1 = -2*np.pi + (1-tao)*2*np.pi
         m2 = -2*np.pi + tao*2*np.pi
-        b = 1
+        
         while(self._iter<self.max_iter):
             a = self.a_max - (self.a_max-self.a_min)*(self._iter/self.max_iter)
             if self._iter<0.5*self.max_iter:
-                C1 = 0.5*(1 + np.cos(np.pi*self._iter/self.max_iter))**0.5
+                C1 = 0.5*(1 + np.cos(np.pi*self._iter/self.max_iter))**0.5 # (8)
             else:
-                C1 = 0.5*(1 - np.cos(np.pi+(np.pi*self._iter/self.max_iter)))**0.5
+                C1 = 0.5*(1 - np.cos(np.pi+(np.pi*self._iter/self.max_iter)))**0.5 # (8)
                 
             for i in range(self.num_particle):
-                R1 = 2*np.pi*np.random.uniform()
-                R2 = np.pi*np.random.uniform()
                 p = np.random.uniform()
                 r1 = np.random.uniform()
                 r2 = np.random.uniform()
                 A = 2*a*r1 - a
                 C = 2*r2
                 l = np.random.uniform()*(self.l_max-self.l_min) + self.l_min
+                
                 if p<0.5:
                     if np.abs(A)<1:
-                        self.X[i, :] = self.gBest_X - C1*A*np.abs(C*self.gBest_X-self.X[i, :])                
+                        self.X[i, :] = self.gBest_X - C1*A*np.abs(C*self.gBest_X-self.X[i, :]) # (9)
                     else:
                         X_rand = self.X[np.random.randint(low=0, high=self.num_particle, size=self.num_dim), :]
                         X_rand = np.diag(X_rand).copy()
-                        self.X[i, :] = X_rand - C1*A*np.abs(C*X_rand-self.X[i, :])
+                        self.X[i, :] = X_rand - C1*A*np.abs(C*X_rand-self.X[i, :]) # (10)
                 else:
                     D = np.abs(self.gBest_X - self.X[i, :])
-                    self.X[i, :] = D*np.exp(b*l)*C1*np.cos(2*np.pi*l) + self.gBest_X
+                    self.X[i, :] = D*np.exp(self.b*l)*C1*np.cos(2*np.pi*l) + self.gBest_X # (11)
 
-            self.X = self.X*np.abs(np.sin(R1)) + R2*np.sin(R1)*np.abs(m1*self.gBest_X-m2*self.X)
+            R1 = np.random.uniform()
+            R2 = np.random.uniform()
+            self.X = self.X*np.abs(np.sin(R1)) + R2*np.sin(R1)*np.abs(m1*self.gBest_X-m2*self.X) # (20)
   
-            self.X[self.bound_max < self.X] = self.bound_max[self.bound_max < self.X]
-            self.X[self.bound_min > self.X] = self.bound_min[self.bound_min > self.X]                        
+            self.X = np.clip(self.X, self.x_min, self.x_max)
                    
             score = self.fit_func(self.X)
             if np.min(score) < self.gBest_score:
@@ -91,5 +90,5 @@ class NGS_WOA():
         plt.plot(self.gBest_curve, label='loss')
         plt.grid()
         plt.legend()
-        plt.show()        
+        plt.show()
             

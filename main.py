@@ -355,6 +355,7 @@ for i in range(times):
     all_for_std[i, 0] = optimizer.gBest_score
     all_for_loss[:, 0] += optimizer.gBest_curve
 
+
     x_max = 10*np.ones(d)
     x_min = -10*np.ones(d)
     optimizer = NGS_WOA(fit_func=Schwefel_P222, 
@@ -384,6 +385,7 @@ for i in range(times):
     all_for_std[i, 2] = optimizer.gBest_score
     all_for_loss[:, 2] += optimizer.gBest_curve
 
+
     x_max = 100*np.ones(d)
     x_min = -100*np.ones(d)
     optimizer = NGS_WOA(fit_func=Schwefel_P221, 
@@ -398,6 +400,7 @@ for i in range(times):
     all_for_std[i, 3] = optimizer.gBest_score
     all_for_loss[:, 3] += optimizer.gBest_curve  
  
+    
     x_max = 30*np.ones(d)
     x_min = -30*np.ones(d)
     optimizer = NGS_WOA(fit_func=Rosenbrock, 
@@ -472,6 +475,7 @@ for i in range(times):
     all_for_std[i, 8] = optimizer.gBest_score
     all_for_loss[:, 8] += optimizer.gBest_curve
  
+    
     x_max = 32*np.ones(d)
     x_min = -32*np.ones(d)
     optimizer = NGS_WOA(fit_func=Ackley, 
@@ -501,6 +505,7 @@ for i in range(times):
     all_for_std[i, 10] = optimizer.gBest_score
     all_for_loss[:, 10] += optimizer.gBest_curve
 
+
     x_max = 50*np.ones(d)
     x_min = -50*np.ones(d)
     optimizer = NGS_WOA(fit_func=Generalized_Penalized01, 
@@ -514,6 +519,7 @@ for i in range(times):
     table[1, 11] += end - start  
     all_for_std[i, 11] = optimizer.gBest_score
     all_for_loss[:, 11] += optimizer.gBest_curve
+    
     
     x_max = 50*np.ones(d)
     x_min = -50*np.ones(d)
@@ -529,6 +535,7 @@ for i in range(times):
     all_for_std[i, 12] = optimizer.gBest_score
     all_for_loss[:, 12] += optimizer.gBest_curve
     
+    
     x_max = 65.536*np.ones(2)
     x_min = -65.536*np.ones(2)
     optimizer = NGS_WOA(fit_func=DE_JONG_N5, 
@@ -542,6 +549,7 @@ for i in range(times):
     table[1, 13] += end - start  
     all_for_std[i, 13] = optimizer.gBest_score
     all_for_loss[:, 13] += optimizer.gBest_curve
+    
     
     x_max = 5*np.ones(4)
     x_min = -5*np.ones(4)
@@ -557,6 +565,7 @@ for i in range(times):
     all_for_std[i, 14] = optimizer.gBest_score
     all_for_loss[:, 14] += optimizer.gBest_curve
     
+    
     x_max = 5*np.ones(2)
     x_min = -5*np.ones(2)
     optimizer = NGS_WOA(fit_func=Six_Hump_Camel, 
@@ -570,6 +579,7 @@ for i in range(times):
     table[1, 15] += end - start  
     all_for_std[i, 15] = optimizer.gBest_score
     all_for_loss[:, 15] += optimizer.gBest_curve
+    
     
     x_max = 5*np.ones(2)
     x_min = -5*np.ones(2)
@@ -585,6 +595,7 @@ for i in range(times):
     all_for_std[i, 16] = optimizer.gBest_score
     all_for_loss[:, 16] += optimizer.gBest_curve
     
+    
     x_max = 2*np.ones(2)
     x_min = -2*np.ones(2)
     optimizer = NGS_WOA(fit_func=Goldstein_Price, 
@@ -598,6 +609,7 @@ for i in range(times):
     table[1, 17] += end - start  
     all_for_std[i, 17] = optimizer.gBest_score
     all_for_loss[:, 17] += optimizer.gBest_curve
+    
     
     x_max = 1*np.ones(3)
     x_min = 0*np.ones(3)
@@ -613,6 +625,7 @@ for i in range(times):
     all_for_std[i, 18] = optimizer.gBest_score
     all_for_loss[:, 18] += optimizer.gBest_curve
     
+    
     x_max = 1*np.ones(6)
     x_min = 0*np.ones(6)
     optimizer = NGS_WOA(fit_func=Hartmann_6D, 
@@ -626,6 +639,7 @@ for i in range(times):
     table[1, 19] += end - start  
     all_for_std[i, 19] = optimizer.gBest_score
     all_for_loss[:, 19] += optimizer.gBest_curve
+    
     
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
@@ -641,6 +655,7 @@ for i in range(times):
     all_for_std[i, 20] = optimizer.gBest_score
     all_for_loss[:, 20] += optimizer.gBest_curve
     
+    
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)
     optimizer = NGS_WOA(fit_func=Shekel_m7, 
@@ -654,6 +669,7 @@ for i in range(times):
     table[1, 21] += end - start  
     all_for_std[i, 21] = optimizer.gBest_score
     all_for_loss[:, 21] += optimizer.gBest_curve
+    
     
     x_max = 10*np.ones(4)
     x_min = 0*np.ones(4)

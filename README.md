@@ -1,6 +1,7 @@
 # improved-WOA-based-on-nonlinear-adaptive-weight-and-golden-sine-operator
+J. Zhang and J. Wang, "Improved Whale Optimization Algorithm Based on Nonlinear Adaptive Weight and Golden Sine Operator", IEEE Access, vol. 8, pp. 77013-77048, 2020.
 
-Zhang, J., & Wang, J. S. (2020). Improved Whale Optimization Algorithm Based on Nonlinear Adaptive Weight and Golden Sine Operator. IEEE Access, 8, 77013–77048. doi:10.1109/access.2020.2989445
+https://doi.org/10.1109/ACCESS.2020.2989445
 
 1. 重新優化了測試腳本
 
